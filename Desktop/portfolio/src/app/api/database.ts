@@ -57,7 +57,7 @@ migrate();
 // Utility function to promisify sqlite3 methods
 const promisifyDbMethod = (db: sqlite3.Database, method: 'all' | 'run', query: string) => {
   return new Promise((resolve, reject) => {
-    db[method](query, (err: Error, result: any) => {
+    db[method](query, (err: Error, result: []) => {
       if (err) {
         return reject(err);
       }

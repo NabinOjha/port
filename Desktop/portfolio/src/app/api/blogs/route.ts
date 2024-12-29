@@ -1,6 +1,6 @@
 import { apiPost, apiGet } from "../database";
 
-export async function GET(req: Request, res: Response) {
+export async function GET() {
   const query = `
     SELECT * from blogs
   `;
@@ -19,8 +19,7 @@ export async function GET(req: Request, res: Response) {
     return Response.json(body, {
       status,
     });
-  } catch (error: any) {
-    console.error(error.message);
+  } catch (error) {
     return Response.json(
       { error: error },
       {
@@ -30,11 +29,9 @@ export async function GET(req: Request, res: Response) {
   }
 }
 
-export async function POST(req: Request, res: Response) {
+export async function POST(req: Request) {
   const body = await req.json();
   const { name, description, slug }  = body;
-
-  console.log({name, description, slug})
 
   const query = `
       INSERT INTO blogs(name, description, slug)

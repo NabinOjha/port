@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion, useAnimation, useScroll, useTransform, useMotionValue, useSpring, MotionValue } from 'framer-motion'
+import { motion, useAnimation, useScroll, useTransform, useSpring } from 'framer-motion'
 import { Github, Linkedin, Mail } from 'lucide-react'
 import { SocialIconProps, WorkHistoryItemProps, BlogPostLinkProps, SectionProps } from './types'
 
@@ -247,7 +247,7 @@ function ContactSection({ isLoaded }: SectionProps) {
       className="text-center"
     >
       <h2 className="text-4xl font-semibold mb-8 text-gray-800">Get In Touch</h2>
-      <p className="text-xl mb-8 text-gray-600">Interested in working together? Let's connect!</p>
+      <p className="text-xl mb-8 text-gray-600">Interested in working together? Let&apos;s  connect!</p>
       <motion.a
         href="mailto:nabinojha47@gmail.com"
         whileHover={{ scale: 1.1 }}
